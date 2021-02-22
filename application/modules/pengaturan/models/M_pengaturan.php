@@ -12,6 +12,13 @@ class M_pengaturan extends CI_Model
         return $data;
     }
 
+    public function get_all_aktifitas()
+    {
+        $this->db->order_by("created_at", "DESC");
+        $data = $this->db->get("tb_aktifitas")->result();
+
+        return $data;
+    }
 
     // CRUD
     public function save($post)

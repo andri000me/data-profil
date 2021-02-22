@@ -32,6 +32,21 @@ class Pengaturan extends MY_Controller
         $this->template("dashboard_data", $data);
     }
 
+    public function aktifitas()
+    {
+        if ($this->session->userdata("id_akun") == "") {
+            redirect("../");
+        }
+
+        $model = $this->M_pengaturan;
+
+        $data = array(
+            "aktif" => $model->get_all_aktifitas(),
+        );
+
+        $this->template("dashboard_aktifitas", $data);
+    }
+
     // CRUD
     public function tambahData()
     {

@@ -27,9 +27,9 @@ $akun = $this->session->userdata("akun");
 							<li>
 								<a tabindex="-1" href="<?php echo site_url('../pengaturan/data'); ?>" class="dropdown-item">Data</a>
 							</li>
-							<!-- <li>
-								<a tabindex="-1" href="<?php echo site_url('../pengaturan/kecamatan'); ?>" class="dropdown-item">Kecamatan</a>
-							</li> -->
+							<li>
+								<a tabindex="-1" href="<?php echo site_url('../pengaturan/aktifitas'); ?>" class="dropdown-item">Aktifitas</a>
+							</li>
 						</ul>
 					</li>
 				<?php endif; ?>
