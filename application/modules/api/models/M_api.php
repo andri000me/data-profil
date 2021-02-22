@@ -31,7 +31,7 @@ class M_api extends CI_Model
                 if (strtotime($dt->kadaluarsa) > strtotime($hari_ini)) {
                     $this->insert_history($dt->token, "Auth gagal karena token masih aktif");
 
-                    return $this->response(200, false, array("token" => $dt->token, "message" => "Token Masih Aktif Sampai : " . $dt->kadaluarsa));
+                    return $this->response(502, true, array("token" => $dt->token, "message" => "Token Masih Aktif Sampai : " . $dt->kadaluarsa));
                 }
             }
 
@@ -73,9 +73,9 @@ class M_api extends CI_Model
 
             if ($dt->kadaluarsa != "") {
                 if (strtotime($dt->kadaluarsa) > strtotime($hari_ini)) {
-                    $this->insert_history($dt->token, "Auth gagal karena token masih aktif");
+                    $this->insert_history($dt->token, "Refresh Token gagal karena token masih aktif");
 
-                    return $this->response(200, false, array("token" => $dt->token, "message" => "Token Masih Aktif Sampai : " . $dt->kadaluarsa));
+                    return $this->response(502, true, array("token" => $dt->token, "message" => "Token Masih Aktif Sampai : " . $dt->kadaluarsa));
                 }
             }
 
