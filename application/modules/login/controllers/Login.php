@@ -31,13 +31,19 @@ class Login extends MY_Controller
         if ($post['nama'] != '' || $post['sandi'] != '') {
             $data = $model->auth($post['nama'], $post['sandi']);
 
-            if ($data->sandi == $post['sandi']) {
-                $this->session->set_userdata("id_akun", $data->id_akun);
-                $this->session->set_userdata("akun", $data->akun);
+            if ($data->akses == 1) {
+                if ($data->sandi == $post['sandi']) {
+                    $this->session->set_userdata("id_akun", $data->id_akun);
+                    $this->session->set_userdata("akun", $data->akun);
 
-                redirect("../dashboard");
+                    redirect("../dashboard");
+                } else {
+                    $this->session->set_flashdata('gagal', 'Nama Akun atau Kata Sandi Salah.');
+
+                    redirect("../");
+                }
             } else {
-                $this->session->set_flashdata('gagal', 'Nama Akun atau Kata Sandi Salah.');
+                $this->session->set_flashdata('gagal', 'Akun Tidak Memiliki Akses.');
 
                 redirect("../");
             }
