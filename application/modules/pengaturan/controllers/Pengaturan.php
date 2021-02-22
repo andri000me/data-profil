@@ -32,7 +32,6 @@ class Pengaturan extends MY_Controller
         $this->template("dashboard_data", $data);
     }
 
-
     // CRUD
     public function tambahData()
     {
