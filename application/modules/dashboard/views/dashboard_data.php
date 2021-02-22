@@ -79,7 +79,7 @@
                                                                 <td>
                                                                     <div class="form-group">
                                                                         <input type="hidden" name="kode_kecamatan[]" value="<?= $val["kode_kecamatan"]; ?>">
-                                                                        <input type="number" name="nilai[]" class="form-control" value="<?= $val["nilai"]; ?>">
+                                                                        <input type="text" name="nilai[]" class="form-control" value="<?= $val["nilai"]; ?>">
                                                                     </div>
                                                                 </td>
                                                             </tr>
